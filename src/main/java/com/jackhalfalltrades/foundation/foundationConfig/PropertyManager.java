@@ -2,7 +2,10 @@ package com.jackhalfalltrades.foundation.foundationConfig;
 
 import com.netflix.config.ConfigurationManager;
 import com.netflix.config.DynamicPropertyFactory;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,6 +15,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Data
+@Builder
+@NoArgsConstructor
 public class PropertyManager {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PropertyManager.class);

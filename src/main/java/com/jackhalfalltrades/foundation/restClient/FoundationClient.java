@@ -1,5 +1,9 @@
 package com.jackhalfalltrades.foundation.restClient;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
@@ -9,6 +13,9 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.concurrent.TimeUnit;
 
+@Data
+@NoArgsConstructor
+@Builder
 public class FoundationClient {
 
     private RestTemplate getFoundationClient(long maxIdleTime, int readTimeout, int connectionTimeout) {
