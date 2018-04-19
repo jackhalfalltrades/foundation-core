@@ -18,7 +18,7 @@ apply plugin: 'application'
 mainClassName = 'com.jackhalfalltrades.foundation.FoundationCoreApplication'
 
 group = 'com.jackhalfalltrades.foundation'
-version = '1.0.2'
+version = '1.0.3'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -27,7 +27,7 @@ jar {
     baseName = 'foundation-core'
     manifest {
         attributes(
-                'Implementation-Version' : "1.0.2"
+                'Implementation-Version' : "1.0.3"
         )
     }
 }
