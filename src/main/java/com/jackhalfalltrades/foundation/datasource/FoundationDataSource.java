@@ -14,14 +14,15 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import javax.sql.DataSource;
 
     @Data
-    @Builder
-    @NoArgsConstructor
     @ConfigurationProperties(prefix = "spring.datasource")
     @Configuration
     public class FoundationDataSource {
 
-        private NamedParameterJdbcTemplate getDBTemplate() {
+        private NamedParameterJdbcTemplate template;
+
+        public FoundationDataSource() {
             JdbcTemplate jdbcTemplate = new JdbcTemplate(DataSourceBuilder.create().build());
-            return new NamedParameterJdbcTemplate(jdbcTemplate);
+            this.template = new NamedParameterJdbcTemplate(jdbcTemplate);
         }
+
     }

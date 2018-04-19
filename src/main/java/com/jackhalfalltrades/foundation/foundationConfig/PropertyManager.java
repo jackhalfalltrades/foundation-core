@@ -21,11 +21,11 @@ public class PropertyManager {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PropertyManager.class);
 
-    private static synchronized void setProperty(String propertyName, Object propertyValues) {
+    public static synchronized void setProperty(String propertyName, Object propertyValues) {
         ConfigurationManager.getConfigInstance().setProperty(propertyName, propertyValues);
     }
 
-    private static double getDoubleProperty(String propertyName, Double defaultValue) {
+    public static double getDoubleProperty(String propertyName, Double defaultValue) {
         return DynamicPropertyFactory.getInstance().getDoubleProperty(propertyName, defaultValue).get();
     }
 

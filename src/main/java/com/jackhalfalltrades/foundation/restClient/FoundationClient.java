@@ -14,19 +14,25 @@ import org.springframework.web.client.RestTemplate;
 import java.util.concurrent.TimeUnit;
 
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class FoundationClient {
 
-    private RestTemplate getFoundationClient(long maxIdleTime, int readTimeout, int connectionTimeout) {
-        final HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient(maxIdleTime));
+    private long maxIdleTime;
+
+    private int readTimeout;
+
+    private int connectionTimeout;
+
+
+    public RestTemplate getFoundationClient() {
+        final HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient());
         requestFactory.setConnectionRequestTimeout(connectionTimeout);
         requestFactory.setReadTimeout(readTimeout);
         final RestTemplate foundationClient = new RestTemplate(requestFactory);
         return foundationClient;
     }
-
-
 
     protected PoolingHttpClientConnectionManager poolingHttpClientConnectionManager() {
         final PoolingHttpClientConnectionManager poolingHttpClientConnectionManager = new PoolingHttpClientConnectionManager();
@@ -35,7 +41,7 @@ public class FoundationClient {
     }
 
 
-    protected HttpClient httpClient(long maxIdleTime) {
+    protected HttpClient httpClient() {
         return HttpClientBuilder.create()
                 .disableAutomaticRetries()
                 .useSystemProperties()
