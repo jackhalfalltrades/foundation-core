@@ -17,6 +17,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'maven'
 
+group = 'com.jackhalfalltrades.springboot'
 version='1.0.4'
 
 jar {
