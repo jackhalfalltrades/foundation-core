@@ -16,6 +16,9 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'maven'
+
+version='1.0.4'
+
 jar {
     baseName = 'foundation-core'
     version = '1.0.4'
