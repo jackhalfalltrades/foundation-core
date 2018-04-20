@@ -14,7 +14,7 @@ plugins { id "io.spring.dependency-management" version "1.0.4.RELEASE" }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-
+apply plugin: 'maven-publish'
 jar {
     baseName = 'foundation-core'
     version = '1.0.4'
